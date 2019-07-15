@@ -4,7 +4,23 @@ const Koa = require('koa')
 const consola = require('consola')
 const { Nuxt, Builder } = require('nuxt')
 
+import mongoose from 'mongoose'
+// import bodyParser from 'koa-bodyparser'
+// import session from 'koa-generic-session'
+// import Redis from 'koa-redis'
+// import json from 'koa-json'
+// import dbConfig from './dbs/config'
+// import passport from './interface/utils/passport'
+// import users from './interface/users'
+
 const app = new Koa()
+// app.keys = ['mt','keyskeys']
+// app.proxy = true
+// app.use(session({
+//     key:'mt',
+//     prefix:'mt:uid',
+//     store:new Redis()
+// })) 
 
 // Import and Set Nuxt.js options
 const config = require('../nuxt.config.js')
