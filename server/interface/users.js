@@ -95,7 +95,6 @@ router.post('/signin', async (ctx, next) => {
 router.post('/verify', async (ctx, next) => {
   let username = ctx.request.body.username
   const saveExpire = await Store.hget(`nodemail:${username}`, 'expire')
-  debugger
   if (saveExpire && new Date().getTime() - saveExpire < 0) {
     ctx.body = {
       code: -1,
@@ -103,7 +102,6 @@ router.post('/verify', async (ctx, next) => {
     }
     return false
   }
-  debugger
   let transporter = nodeMailer.createTransport({
     service: 'qq',
     auth: {

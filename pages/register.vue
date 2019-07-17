@@ -76,6 +76,7 @@
 </template>
 
 <script>
+import CryptoJS from 'crypto-js'
 export default {
     layout:'blank',
     data(){
@@ -145,7 +146,6 @@ export default {
               this.$refs['ruleForm'].validateField('email', (valid) => {
                 emailPass = valid
               })
-              debugger
               if (!namePass && !emailPass) {
                 self.$axios.post('/users/verify', {
                   username: encodeURIComponent(self.ruleForm.name),
